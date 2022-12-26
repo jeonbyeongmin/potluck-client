@@ -1,9 +1,9 @@
 import { Html, Head, Main, NextScript } from 'next/document';
-import { getCssText } from '../stitches.config';
+import { getCssText } from 'stitches.config';
 
 export default function Document() {
   return (
-    <Html lang="kr">
+    <Html lang="ko">
       <Head>
         <style
           id="stitches"
