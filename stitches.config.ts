@@ -236,6 +236,7 @@ export const {
       7: '4.5rem',
       8: '6.5rem',
       9: '8rem',
+      full: '100%',
     },
 
     fontSizes: {
@@ -286,6 +287,26 @@ export const {
   },
 
   utils: {
+    w: (value: Stitches.PropertyValue<'width'>) => ({
+      width: value,
+    }),
+    minW: (value: Stitches.PropertyValue<'minWidth'>) => ({
+      minWidth: value,
+    }),
+    maxW: (value: Stitches.PropertyValue<'maxWidth'>) => ({
+      maxWidth: value,
+    }),
+
+    h: (value: Stitches.PropertyValue<'height'>) => ({
+      height: value,
+    }),
+    minH: (value: Stitches.PropertyValue<'minHeight'>) => ({
+      minHeight: value,
+    }),
+    maxH: (value: Stitches.PropertyValue<'maxHeight'>) => ({
+      maxHeight: value,
+    }),
+
     // padding utils
     p: (value: Stitches.PropertyValue<'padding'>) => ({
       padding: value,
