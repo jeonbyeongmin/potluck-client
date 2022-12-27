@@ -7,33 +7,33 @@ export const Grid = styled('div', {
   variants: {
     align: {
       start: {
-        alignItems: 'start',
+        ai: 'start',
       },
       center: {
-        alignItems: 'center',
+        ai: 'center',
       },
       end: {
-        alignItems: 'end',
+        ai: 'end',
       },
       stretch: {
-        alignItems: 'stretch',
+        ai: 'stretch',
       },
       baseline: {
-        alignItems: 'baseline',
+        ai: 'baseline',
       },
     },
     justify: {
       start: {
-        justifyContent: 'start',
+        jc: 'start',
       },
       center: {
-        justifyContent: 'center',
+        jc: 'center',
       },
       end: {
-        justifyContent: 'end',
+        jc: 'end',
       },
       between: {
-        justifyContent: 'space-between',
+        jc: 'space-between',
       },
     },
     flow: {

@@ -7,60 +7,64 @@ export const Flex = styled('div', {
   variants: {
     direction: {
       row: {
-        flexDirection: 'row',
+        fd: 'row',
       },
       column: {
-        flexDirection: 'column',
+        fd: 'column',
       },
       rowReverse: {
-        flexDirection: 'row-reverse',
+        fd: 'row-reverse',
       },
       columnReverse: {
-        flexDirection: 'column-reverse',
+        fd: 'column-reverse',
       },
     },
+
     align: {
       start: {
-        alignItems: 'flex-start',
+        ai: 'flex-start',
       },
       center: {
-        alignItems: 'center',
+        ai: 'center',
       },
       end: {
-        alignItems: 'flex-end',
+        ai: 'flex-end',
       },
       stretch: {
-        alignItems: 'stretch',
+        ai: 'stretch',
       },
       baseline: {
-        alignItems: 'baseline',
+        ai: 'baseline',
       },
     },
+
     justify: {
       start: {
-        justifyContent: 'flex-start',
+        jc: 'flex-start',
       },
       center: {
-        justifyContent: 'center',
+        jc: 'center',
       },
       end: {
-        justifyContent: 'flex-end',
+        jc: 'flex-end',
       },
       between: {
-        justifyContent: 'space-between',
+        jc: 'space-between',
       },
     },
+
     wrap: {
       noWrap: {
-        flexWrap: 'nowrap',
+        fw: 'nowrap',
       },
       wrap: {
-        flexWrap: 'wrap',
+        fw: 'wrap',
       },
       wrapReverse: {
-        flexWrap: 'wrap-reverse',
+        fw: 'wrap-reverse',
       },
     },
+
     gap: {
       1: {
         gap: '$1',
@@ -91,6 +95,7 @@ export const Flex = styled('div', {
       },
     },
   },
+
   defaultVariants: {
     direction: 'row',
     align: 'stretch',

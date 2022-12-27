@@ -2,8 +2,8 @@ import { styled } from 'stitches.config';
 
 export const Text = styled('span', {
   // Reset
-  lineHeight: '1',
-  margin: '0',
+  lh: '1',
+  m: '0',
   fontWeight: 400,
   fontVariantNumeric: 'tabular-nums',
   display: 'block',
@@ -46,6 +46,7 @@ export const Text = styled('span', {
         textIndent: '-.025em',
       },
     },
+
     variant: {
       red: {
         color: '$red11',
@@ -99,6 +100,7 @@ export const Text = styled('span', {
         color: '$hiContrast',
       },
     },
+
     gradient: {
       true: {
         WebkitBackgroundClip: 'text',
@@ -106,6 +108,7 @@ export const Text = styled('span', {
       },
     },
   },
+
   compoundVariants: [
     {
       variant: 'red',
@@ -227,6 +230,7 @@ export const Text = styled('span', {
       },
     },
   ],
+
   defaultVariants: {
     size: '3',
     variant: 'contrast',
