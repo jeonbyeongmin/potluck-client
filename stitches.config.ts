@@ -208,6 +208,12 @@ export const {
       mono: 'Söhne Mono, menlo, monospace',
     },
 
+    fontWeights: {
+      light: 300,
+      regular: 400,
+      bold: 700,
+    },
+
     space: {
       1: '0.5rem',
       2: '1rem',
@@ -244,6 +250,8 @@ export const {
       9: '5.9rem',
     },
 
+    lineHeights: {},
+
     radii: {
       1: '0.4rem',
       2: '0.6rem',
@@ -260,13 +268,17 @@ export const {
       4: '400',
       max: '999',
     },
+
+    shadows: {},
+
+    transitions: {},
   },
 
   media: {
-    bp1: '(min-width: 520px)',
-    bp2: '(min-width: 900px)',
-    bp3: '(min-width: 1200px)',
-    bp4: '(min-width: 1800px)',
+    bp1: '(min-width: 640px)',
+    bp2: '(min-width: 768px)',
+    bp3: '(min-width: 1024px)',
+    bp4: '(min-width: 1280px)',
     motion: '(prefers-reduced-motion)',
     hover: '(any-hover: hover)',
     dark: '(prefers-color-scheme: dark)',
@@ -274,6 +286,7 @@ export const {
   },
 
   utils: {
+    // padding utils
     p: (value: Stitches.PropertyValue<'padding'>) => ({
       padding: value,
     }),
@@ -298,6 +311,7 @@ export const {
       paddingBottom: value,
     }),
 
+    // margin utils
     m: (value: Stitches.PropertyValue<'margin'>) => ({
       margin: value,
     }),
@@ -322,13 +336,11 @@ export const {
       marginBottom: value,
     }),
 
-    ta: (value: Stitches.PropertyValue<'textAlign'>) => ({ textAlign: value }),
-
+    // flex utils
     fd: (value: Stitches.PropertyValue<'flexDirection'>) => ({
       flexDirection: value,
     }),
     fw: (value: Stitches.PropertyValue<'flexWrap'>) => ({ flexWrap: value }),
-
     ai: (value: Stitches.PropertyValue<'alignItems'>) => ({
       alignItems: value,
     }),
@@ -345,10 +357,7 @@ export const {
     }),
     fb: (value: Stitches.PropertyValue<'flexBasis'>) => ({ flexBasis: value }),
 
-    bc: (value: Stitches.PropertyValue<'backgroundColor'>) => ({
-      backgroundColor: value,
-    }),
-
+    // border utils
     br: (value: Stitches.PropertyValue<'borderRadius'>) => ({
       borderRadius: value,
     }),
@@ -371,8 +380,15 @@ export const {
       lineHeight: value,
     }),
 
+    // overflow utils
     ox: (value: Stitches.PropertyValue<'overflowX'>) => ({ overflowX: value }),
     oy: (value: Stitches.PropertyValue<'overflowY'>) => ({ overflowY: value }),
+
+    bc: (value: Stitches.PropertyValue<'backgroundColor'>) => ({
+      backgroundColor: value,
+    }),
+
+    ta: (value: Stitches.PropertyValue<'textAlign'>) => ({ textAlign: value }),
 
     pe: (value: Stitches.PropertyValue<'pointerEvents'>) => ({
       pointerEvents: value,
