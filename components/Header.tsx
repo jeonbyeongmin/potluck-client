@@ -6,7 +6,7 @@ import { styled } from 'stitches.config';
 function Header() {
   return (
     <HeaderWrapper>
-      <Text>Potluck</Text>
+      <Text weight="bold">Potluck</Text>
       <Avatar alt="byeongmin" fallback="JB" variant="blue" />
     </HeaderWrapper>
   );
@@ -20,6 +20,8 @@ const HeaderWrapper = styled('header', {
   display: 'flex',
   ai: 'center',
   jc: 'space-between',
+
+  bc: 'white',
 });
 
 export default Header;

@@ -47,6 +47,18 @@ export const Text = styled('span', {
       },
     },
 
+    weight: {
+      light: {
+        fontWeight: 300,
+      },
+      regular: {
+        fontWeight: 400,
+      },
+      bold: {
+        fontWeight: 700,
+      },
+    },
+
     variant: {
       red: {
         color: '$red11',
@@ -233,6 +245,7 @@ export const Text = styled('span', {
 
   defaultVariants: {
     size: '3',
+    weight: 'regular',
     variant: 'contrast',
   },
 });

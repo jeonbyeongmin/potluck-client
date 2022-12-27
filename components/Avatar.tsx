@@ -38,28 +38,28 @@ const StyledAvatar = styled(AvatarPrimitive.Root, {
   variants: {
     size: {
       '1': {
-        width: '$3',
-        height: '$3',
+        w: '$3',
+        h: '$3',
       },
       '2': {
-        width: '$5',
-        height: '$5',
+        w: '$5',
+        h: '$5',
       },
       '3': {
-        width: '$6',
-        height: '$6',
+        w: '$6',
+        h: '$6',
       },
       '4': {
-        width: '$7',
-        height: '$7',
+        w: '$7',
+        h: '$7',
       },
       '5': {
-        width: '$8',
-        height: '$8',
+        w: '$8',
+        h: '$8',
       },
       '6': {
-        width: '$9',
-        height: '$9',
+        w: '$9',
+        h: '$9',
       },
     },
     variant: {
@@ -202,8 +202,8 @@ const StyledAvatarFallback = styled(AvatarPrimitive.Fallback, {
   variants: {
     size: {
       '1': {
-        fontSize: '10px',
-        lineHeight: '15px',
+        fontSize: '1rem',
+        lineHeight: '1.5rem',
       },
       '2': {
         fontSize: '$3',
