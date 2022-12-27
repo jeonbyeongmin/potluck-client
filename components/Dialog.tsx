@@ -2,9 +2,9 @@ import React from 'react';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
 import { Cross1Icon } from '@radix-ui/react-icons';
 import { styled, CSS } from 'stitches.config';
-import { panelStyles } from 'components/Panel';
-import { overlayStyles } from 'components/Overlay';
 import { IconButton } from 'components/IconButton';
+import { overlayStyles } from 'components/primitive/Overlay';
+import { panelStyles } from 'components/primitive/Panel';
 
 const Dialog = DialogPrimitive.Root;
 const DialogTrigger = DialogPrimitive.Trigger;
