@@ -1,5 +1,6 @@
 import React from 'react';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
+import { Cross1Icon } from '@radix-ui/react-icons';
 import { styled, CSS } from 'stitches.config';
 import { panelStyles } from 'components/Panel';
 import { overlayStyles } from 'components/Overlay';
@@ -54,7 +55,9 @@ const DialogContent = React.forwardRef<
     <StyledContent {...props} ref={forwardedRef}>
       {children}
       <StyledCloseButton asChild>
-        <IconButton variant="ghost">{/* <Cross1Icon /> */}</IconButton>
+        <IconButton variant="ghost">
+          <Cross1Icon />
+        </IconButton>
       </StyledCloseButton>
     </StyledContent>
   </DialogPrimitive.Portal>
