@@ -1,0 +1,56 @@
+import React from 'react';
+import { Link, List, ListItem, Text } from 'components/primitive';
+import { styled } from 'stitches.config';
+import { Avatar } from 'components/Avatar';
+
+export function Nav() {
+  return (
+    <NavWrapper>
+      <List>
+        <Link href={'/parties/1'}>
+          <ListItem active>
+            <Avatar size="2" shape="square" src="https://i.pravatar.cc/300" />
+            <Text size={'2'}>프론트엔드 정보</Text>
+          </ListItem>
+        </Link>
+        <Link href={'/parties/2'}>
+          <ListItem>
+            <Avatar size="2" shape="square" src="https://i.pravatar.cc/300" />
+            <Text size={'2'}>파티 이름 입니다</Text>
+          </ListItem>
+        </Link>
+        <Link href={'/parties/3'}>
+          <ListItem>
+            <Avatar size="2" shape="square" src="https://i.pravatar.cc/300" />
+            <Text size={'2'}>파티 이름 입니다</Text>
+          </ListItem>
+        </Link>
+        <Link href={'/parties/4'}>
+          <ListItem>
+            <Avatar size="2" shape="square" src="https://i.pravatar.cc/300" />
+            <Text size={'2'}>파티 이름 입니다</Text>
+          </ListItem>
+        </Link>
+        <Link href={'/parties/5'}>
+          <ListItem>
+            <Avatar size="2" shape="square" src="https://i.pravatar.cc/300" />
+            <Text size={'2'}>파티 이름 입니다</Text>
+          </ListItem>
+        </Link>
+      </List>
+    </NavWrapper>
+  );
+}
+
+const NavWrapper = styled('nav', {
+  display: 'flex',
+  gap: '1rem',
+  fd: 'column',
+  jc: 'start',
+  ai: 'start',
+  px: '1rem',
+  h: 'calc(100vh - 6rem)',
+  w: '24rem',
+  bc: 'white',
+  minH: '50rem',
+});

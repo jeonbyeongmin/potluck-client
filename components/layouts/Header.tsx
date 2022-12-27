@@ -1,12 +1,14 @@
 import { Avatar } from 'components/Avatar';
-import { Text } from 'components/primitive';
+import { Link, Text } from 'components/primitive';
 import React from 'react';
 import { styled } from 'stitches.config';
 
 function Header() {
   return (
     <HeaderWrapper>
-      <Text weight="bold">Potluck</Text>
+      <Link href="/">
+        <Text weight="bold">Potluck</Text>
+      </Link>
       <Avatar alt="byeongmin" fallback="JB" variant="blue" />
     </HeaderWrapper>
   );

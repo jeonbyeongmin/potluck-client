@@ -34,7 +34,7 @@ export const Link = styled(NextLink, {
     variant: {
       ghost: {
         color: 'black',
-        textDecorationColor: 'transparent',
+        textDecorationLine: 'none',
       },
 
       blue: {
