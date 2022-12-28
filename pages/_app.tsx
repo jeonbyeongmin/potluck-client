@@ -1,5 +1,6 @@
 import type { AppProps } from 'next/app';
 import { Noto_Sans } from '@next/font/google';
+import NextNProgress from 'nextjs-progressbar';
 import 'styles.css';
 
 const notoSans = Noto_Sans({
@@ -10,6 +11,7 @@ const notoSans = Noto_Sans({
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <main className={notoSans.className}>
+      <NextNProgress />
       <Component {...pageProps} />
     </main>
   );
