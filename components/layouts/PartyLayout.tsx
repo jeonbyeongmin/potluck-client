@@ -18,7 +18,7 @@ function PartyLayout({ children, title = 'Potluck' }: PartyLayoutProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Header />
-      <Flex>
+      <Flex direction="row">
         <Nav />
         {children}
       </Flex>

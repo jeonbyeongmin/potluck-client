@@ -12,12 +12,15 @@ export const Text = styled('span', {
     size: {
       '1': {
         fontSize: '$1',
+        lineHeight: '$1',
       },
       '2': {
         fontSize: '$2',
+        lineHeight: '$1',
       },
       '3': {
         fontSize: '$3',
+        lineHeight: '$1',
       },
       '4': {
         fontSize: '$4',
@@ -117,6 +120,14 @@ export const Text = styled('span', {
       true: {
         WebkitBackgroundClip: 'text',
         WebkitTextFillColor: 'transparent',
+      },
+    },
+
+    overflow: {
+      hidden: {
+        overflow: 'hidden',
+        textOverflow: 'ellipsis',
+        whiteSpace: 'nowrap',
       },
     },
   },
