@@ -123,11 +123,34 @@ export const Text = styled('span', {
       },
     },
 
-    overflow: {
-      hidden: {
+    maxLines: {
+      1: {
         overflow: 'hidden',
         textOverflow: 'ellipsis',
-        whiteSpace: 'nowrap',
+        display: '-webkit-box',
+        WebkitLineClamp: 1,
+        WebkitBoxOrient: 'vertical',
+      },
+      2: {
+        overflow: 'hidden',
+        textOverflow: 'ellipsis',
+        display: '-webkit-box',
+        WebkitLineClamp: 2,
+        WebkitBoxOrient: 'vertical',
+      },
+      3: {
+        overflow: 'hidden',
+        textOverflow: 'ellipsis',
+        display: '-webkit-box',
+        WebkitLineClamp: 3,
+        WebkitBoxOrient: 'vertical',
+      },
+      4: {
+        overflow: 'hidden',
+        textOverflow: 'ellipsis',
+        display: '-webkit-box',
+        WebkitLineClamp: 4,
+        WebkitBoxOrient: 'vertical',
       },
     },
   },

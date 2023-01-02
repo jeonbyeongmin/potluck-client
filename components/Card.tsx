@@ -1,5 +1,9 @@
 import * as AspectRatio from '@radix-ui/react-aspect-ratio';
+import { Avatar } from 'components/Avatar';
+import { CommentsIcon, DotsVerticalIcon } from 'components/icons';
+import { IconButton } from 'components/IconButton';
 import { Box, Flex, Text } from 'components/primitive';
+import useHover from 'hooks/useHover';
 import { styled } from 'stitches.config';
 
 interface CardPrpos {
@@ -19,49 +23,98 @@ function Card({
   publishedAt = '2021.08.31',
   imageURL = 'https://images.unsplash.com/photo-1535025183041-0991a977e25b?w=300&dpr=2&q=80',
 }: CardPrpos) {
+  const { isHover, onMouseOut, onMouseOver } = useHover();
+
   return (
-    <CardContainer direction="column" gap={2}>
+    <Container
+      direction="column"
+      gap={2}
+      onMouseOver={onMouseOver}
+      onMouseOut={onMouseOut}
+    >
       <ImageContainer>
         <AspectRatio.Root ratio={16 / 10}>
           <Image src={imageURL} alt="Landscape photograph by Tobias Tullius" />
         </AspectRatio.Root>
       </ImageContainer>
-      <Flex justify="between">
-        <Flex gap={1}>
+
+      <MetaContainer justify="between">
+        <CategoriesWrapper gap={1}>
           {categories.map((category) => (
-            <Text size={1} variant="gray">
-              {'#' + category}
+            <Text size={1} variant="purple">
+              {`#${category}`}
             </Text>
           ))}
-        </Flex>
+        </CategoriesWrapper>
         <Text size={1} variant="gray">
           {`${author} | ${publishedAt}`}
         </Text>
+      </MetaContainer>
+
+      <Flex direction="column" gap={1}>
+        <Flex>
+          <Text weight="bold" maxLines={2}>
+            {title}
+          </Text>
+        </Flex>
+        <Text size={1} maxLines={1} variant="gray">
+          {description}
+        </Text>
       </Flex>
-      <Text weight="bold">{title}</Text>
-      <Text size={2} overflow="hidden" variant="gray">
-        {description}
-      </Text>
-    </CardContainer>
+
+      <Flex align="center">
+        <ProfileContainer align="center" gap={1}>
+          <Avatar src="https://i.pravatar.cc/200" />
+          <Text size={1} variant="gray">
+            전병민
+          </Text>
+        </ProfileContainer>
+        <Flex gap={1}>
+          <IconButton>
+            <CommentsIcon
+              size={20}
+              color={isHover ? 'gray10' : 'transparent'}
+            />
+          </IconButton>
+          <IconButton>
+            <DotsVerticalIcon
+              size={20}
+              color={isHover ? 'gray10' : 'transparent'}
+            />
+          </IconButton>
+        </Flex>
+      </Flex>
+    </Container>
   );
 }
 
-const CardContainer = styled(Flex, {
+const Container = styled(Flex, {
   w: '30rem',
-  h: '$full',
+  us: 'none',
 });
 
 const ImageContainer = styled(Box, {
   w: '$full',
-  h: '$full',
+
   br: '$4',
   overflow: 'hidden',
 });
 
 const Image = styled('img', {
-  width: '$full',
-  height: '$full',
+  w: '$full',
+  h: '$full',
   objectFit: 'cover',
+});
+
+const MetaContainer = styled(Flex, {
+  w: '$full',
+});
+
+const CategoriesWrapper = styled(Flex, {});
+
+const ProfileContainer = styled(Flex, {
+  w: '$full',
+  mt: '$1',
 });
 
 export default Card;
