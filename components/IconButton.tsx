@@ -2,20 +2,20 @@ import { styled } from 'stitches.config';
 
 export const IconButton = styled('button', {
   // Reset
-  alignItems: 'center',
+  p: '0',
+  display: 'inline-flex',
+  ai: 'center',
+  jc: 'center',
+  fs: 0,
+  us: 'none',
   appearance: 'none',
   borderWidth: '0',
   boxSizing: 'border-box',
-  display: 'inline-flex',
-  flexShrink: 0,
   fontFamily: 'inherit',
-  fontSize: '14px',
-  justifyContent: 'center',
+
   lineHeight: '1',
   outline: 'none',
-  padding: '0',
   textDecoration: 'none',
-  userSelect: 'none',
   WebkitTapHighlightColor: 'transparent',
   color: '$hiContrast',
   '&::before': {
@@ -49,26 +49,27 @@ export const IconButton = styled('button', {
   variants: {
     size: {
       '1': {
-        borderRadius: '$1',
+        borderRadius: '$2',
         height: '$5',
         width: '$5',
       },
       '2': {
-        borderRadius: '$2',
+        borderRadius: '$3',
         height: '$6',
         width: '$6',
       },
       '3': {
-        borderRadius: '$2',
+        borderRadius: '$4',
         height: '$7',
         width: '$7',
       },
       '4': {
-        borderRadius: '$3',
+        borderRadius: '$5',
         height: '$8',
         width: '$8',
       },
     },
+
     variant: {
       ghost: {
         backgroundColor: 'transparent',
