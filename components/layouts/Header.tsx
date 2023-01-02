@@ -1,3 +1,4 @@
+import Logo from 'components/assets/Logo';
 import { Avatar } from 'components/Avatar';
 import { Link, Text } from 'components/primitive';
 import React from 'react';
@@ -7,7 +8,7 @@ function Header() {
   return (
     <HeaderWrapper>
       <Link href="/">
-        <Text weight="bold">Potluck</Text>
+        <Logo />
       </Link>
       <Avatar alt="byeongmin" fallback="JB" variant="blue" />
     </HeaderWrapper>
