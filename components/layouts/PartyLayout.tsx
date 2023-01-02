@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 import Head from 'next/head';
 import Header from 'components/layouts/Header';
 import { Nav } from 'components/layouts/Nav';
-import { Flex } from 'components/primitive';
+import { Box, Flex } from 'components/primitive';
 
 interface PartyLayoutProps {
   title?: string;
@@ -20,7 +20,7 @@ function PartyLayout({ children, title = 'Potluck' }: PartyLayoutProps) {
       <Header />
       <Flex direction="row">
         <Nav />
-        {children}
+        <Box>{children}</Box>
       </Flex>
     </>
   );

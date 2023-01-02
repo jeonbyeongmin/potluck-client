@@ -44,6 +44,8 @@ export const IconButton = styled('button', {
     color: '$slate6',
   },
 
+  transition: 'all 200ms ease-out',
+
   variants: {
     size: {
       '1': {
@@ -88,6 +90,7 @@ export const IconButton = styled('button', {
             backgroundColor: '$slateA4',
           },
       },
+
       raised: {
         boxShadow:
           '0 0 transparent, 0 16px 32px hsl(206deg 12% 5% / 25%), 0 3px 5px hsl(0deg 0% 0% / 10%)',

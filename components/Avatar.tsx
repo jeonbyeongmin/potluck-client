@@ -3,6 +3,67 @@ import { styled, VariantProps, CSS } from 'stitches.config';
 import * as AvatarPrimitive from '@radix-ui/react-avatar';
 import { Box, Status } from 'components/primitive';
 
+type StatusVariants = React.ComponentProps<typeof Status>;
+type StatusColors = Pick<StatusVariants, 'variant'>;
+
+type AvatarVariants = VariantProps<typeof StyledAvatar>;
+type AvatarPrimitiveProps = React.ComponentProps<typeof AvatarPrimitive.Root>;
+type AvatarOwnProps = AvatarPrimitiveProps &
+  AvatarVariants & {
+    css?: CSS;
+    alt?: string;
+    src?: string;
+    fallback?: React.ReactNode;
+    status?: StatusColors['variant'];
+  };
+
+export const Avatar = React.forwardRef<
+  React.ElementRef<typeof StyledAvatar>,
+  AvatarOwnProps
+>(
+  (
+    { alt, src, fallback, size, variant, shape, css, status, ...props },
+    forwardedRef
+  ) => {
+    return (
+      <Box
+        css={{
+          ...css,
+          position: 'relative',
+          height: 'fit-content',
+          width: 'fit-content',
+        }}
+      >
+        <StyledAvatar
+          {...props}
+          ref={forwardedRef}
+          size={size}
+          variant={variant}
+          shape={shape}
+        >
+          <StyledAvatarImage alt={alt} src={src} />
+          <StyledAvatarFallback size={size}>{fallback}</StyledAvatarFallback>
+        </StyledAvatar>
+        {status && (
+          <Box
+            css={{
+              position: 'absolute',
+              bottom: '0',
+              right: '0',
+              boxShadow: '0 0 0 3px $colors$loContrast',
+              borderRadius: '$round',
+              mr: '-3px',
+              mb: '-3px',
+            }}
+          >
+            <Status size={size && size > 2 ? '2' : '1'} variant={status} />
+          </Box>
+        )}
+      </Box>
+    );
+  }
+);
+
 const StyledAvatar = styled(AvatarPrimitive.Root, {
   m: '0',
   p: '0',
@@ -239,64 +300,3 @@ export const AvatarGroup = styled('div', {
     marginRight: '-$1',
   },
 });
-
-type StatusVariants = React.ComponentProps<typeof Status>;
-type StatusColors = Pick<StatusVariants, 'variant'>;
-
-type AvatarVariants = VariantProps<typeof StyledAvatar>;
-type AvatarPrimitiveProps = React.ComponentProps<typeof AvatarPrimitive.Root>;
-type AvatarOwnProps = AvatarPrimitiveProps &
-  AvatarVariants & {
-    css?: CSS;
-    alt?: string;
-    src?: string;
-    fallback?: React.ReactNode;
-    status?: StatusColors['variant'];
-  };
-
-export const Avatar = React.forwardRef<
-  React.ElementRef<typeof StyledAvatar>,
-  AvatarOwnProps
->(
-  (
-    { alt, src, fallback, size, variant, shape, css, status, ...props },
-    forwardedRef
-  ) => {
-    return (
-      <Box
-        css={{
-          ...css,
-          position: 'relative',
-          height: 'fit-content',
-          width: 'fit-content',
-        }}
-      >
-        <StyledAvatar
-          {...props}
-          ref={forwardedRef}
-          size={size}
-          variant={variant}
-          shape={shape}
-        >
-          <StyledAvatarImage alt={alt} src={src} />
-          <StyledAvatarFallback size={size}>{fallback}</StyledAvatarFallback>
-        </StyledAvatar>
-        {status && (
-          <Box
-            css={{
-              position: 'absolute',
-              bottom: '0',
-              right: '0',
-              boxShadow: '0 0 0 3px $colors$loContrast',
-              borderRadius: '$round',
-              mr: '-3px',
-              mb: '-3px',
-            }}
-          >
-            <Status size={size && size > 2 ? '2' : '1'} variant={status} />
-          </Box>
-        )}
-      </Box>
-    );
-  }
-);
