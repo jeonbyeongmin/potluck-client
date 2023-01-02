@@ -6,7 +6,6 @@ import { useRouter } from 'next/router';
 
 export function Nav() {
   const router = useRouter();
-  console.log(router.asPath);
 
   return (
     <NavWrapper>
@@ -19,25 +18,25 @@ export function Nav() {
         </Link>
         <Link href={'/parties/2'}>
           <ListItem active={router.asPath === '/parties/2'}>
-            <Avatar size="2" shape="square" src="https://i.pravatar.cc/300" />
+            <Avatar size="2" shape="square" src="https://i.pravatar.cc/301" />
             <Text size={'2'}>파티 이름 입니다</Text>
           </ListItem>
         </Link>
         <Link href={'/parties/3'}>
           <ListItem active={router.asPath === '/parties/3'}>
-            <Avatar size="2" shape="square" src="https://i.pravatar.cc/300" />
+            <Avatar size="2" shape="square" src="https://i.pravatar.cc/302" />
             <Text size={'2'}>파티 이름 입니다</Text>
           </ListItem>
         </Link>
         <Link href={'/parties/4'}>
           <ListItem active={router.asPath === '/parties/4'}>
-            <Avatar size="2" shape="square" src="https://i.pravatar.cc/300" />
+            <Avatar size="2" shape="square" src="https://i.pravatar.cc/303" />
             <Text size={'2'}>파티 이름 입니다</Text>
           </ListItem>
         </Link>
         <Link href={'/parties/5'}>
           <ListItem active={router.asPath === '/parties/5'}>
-            <Avatar size="2" shape="square" src="https://i.pravatar.cc/300" />
+            <Avatar size="2" shape="square" src="https://i.pravatar.cc/304" />
             <Text size={'2'}>파티 이름 입니다</Text>
           </ListItem>
         </Link>
