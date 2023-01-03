@@ -1,5 +1,5 @@
-import { Svg, Path } from 'components/icons/common/style';
-import { IconProps } from 'components/icons/common/type';
+import { Svg, Path } from 'components/icons/common/iconStyles';
+import { IconProps } from 'components/icons/common/iconTypes';
 
 function CommentsIcon({ size = 24, color = 'gray12' }: IconProps) {
   return (
