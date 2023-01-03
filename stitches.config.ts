@@ -129,7 +129,14 @@ export const {
   config,
   reset,
 } = createStitches({
+  /**
+   * prefix: 'pl' /* Prefix for all generated class names
+   */
   prefix: 'pl',
+
+  /**
+   * Theme Tokens
+   */
   theme: {
     /**
      * 10px = 1rem
@@ -419,9 +426,9 @@ export const {
     },
 
     transitions: {
-      fast: '0.2s',
-      normal: '0.3s',
-      slow: '0.4s',
+      fast: 'all 0.1s ease-in-out',
+      normal: 'all 0.2s ease-in-out',
+      slow: 'all 0.3s ease-in-out',
     },
   },
 
@@ -469,50 +476,50 @@ export const {
     /**
      * Spacing utils
      */
-    p: (value: Stitches.ScaleValue<'space'>) => ({
+    p: (value: Stitches.PropertyValue<'padding'>) => ({
       padding: value,
     }),
-    pt: (value: Stitches.ScaleValue<'space'>) => ({
+    pt: (value: Stitches.PropertyValue<'paddingTop'>) => ({
       paddingTop: value,
     }),
-    pr: (value: Stitches.ScaleValue<'space'>) => ({
+    pr: (value: Stitches.PropertyValue<'paddingRight'>) => ({
       paddingRight: value,
     }),
-    pb: (value: Stitches.ScaleValue<'space'>) => ({
+    pb: (value: Stitches.PropertyValue<'paddingBottom'>) => ({
       paddingBottom: value,
     }),
-    pl: (value: Stitches.ScaleValue<'space'>) => ({
+    pl: (value: Stitches.PropertyValue<'paddingLeft'>) => ({
       paddingLeft: value,
     }),
-    px: (value: Stitches.ScaleValue<'space'>) => ({
+    px: (value: Stitches.ScaleValue<'sizes'>) => ({
       paddingLeft: value,
       paddingRight: value,
     }),
-    py: (value: Stitches.ScaleValue<'space'>) => ({
+    py: (value: Stitches.ScaleValue<'sizes'>) => ({
       paddingTop: value,
       paddingBottom: value,
     }),
 
-    m: (value: Stitches.ScaleValue<'space'>) => ({
+    m: (value: Stitches.PropertyValue<'margin'>) => ({
       margin: value,
     }),
-    mt: (value: Stitches.ScaleValue<'space'>) => ({
+    mt: (value: Stitches.PropertyValue<'marginTop'>) => ({
       marginTop: value,
     }),
-    mr: (value: Stitches.ScaleValue<'space'>) => ({
+    mr: (value: Stitches.PropertyValue<'marginRight'>) => ({
       marginRight: value,
     }),
-    mb: (value: Stitches.ScaleValue<'space'>) => ({
+    mb: (value: Stitches.PropertyValue<'marginBottom'>) => ({
       marginBottom: value,
     }),
-    ml: (value: Stitches.ScaleValue<'space'>) => ({
+    ml: (value: Stitches.PropertyValue<'marginLeft'>) => ({
       marginLeft: value,
     }),
-    mx: (value: Stitches.ScaleValue<'space'>) => ({
+    mx: (value: Stitches.ScaleValue<'sizes'>) => ({
       marginLeft: value,
       marginRight: value,
     }),
-    my: (value: Stitches.ScaleValue<'space'>) => ({
+    my: (value: Stitches.ScaleValue<'sizes'>) => ({
       marginTop: value,
       marginBottom: value,
     }),
