@@ -1,7 +1,7 @@
 import type { AppProps } from 'next/app';
 import { Noto_Sans } from '@next/font/google';
 import NextNProgress from 'nextjs-progressbar';
-import 'styles.css';
+import 'globalStyles.css';
 
 const notoSans = Noto_Sans({
   weight: ['300', '400', '700'],
