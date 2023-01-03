@@ -3,7 +3,7 @@ import { styled, VariantProps, CSS } from 'stitches.config';
 import * as AvatarPrimitive from '@radix-ui/react-avatar';
 import { Box, Status } from 'components/primitive';
 
-type StatusVariants = React.ComponentProps<typeof Status>;
+type StatusVariants = VariantProps<typeof Status>;
 type StatusColors = Pick<StatusVariants, 'variant'>;
 
 type AvatarVariants = VariantProps<typeof StyledAvatar>;
@@ -56,7 +56,7 @@ export const Avatar = React.forwardRef<
               mb: '-3px',
             }}
           >
-            <Status size={size && size > 2 ? '2' : '1'} variant={status} />
+            <Status size={size} variant={status} />
           </Box>
         )}
       </Box>
@@ -69,20 +69,20 @@ const StyledAvatar = styled(AvatarPrimitive.Root, {
   p: '0',
 
   display: 'flex',
-  fs: 0,
-  ai: 'center',
-  jc: 'center',
+  flexShrink: 0,
+  alignItems: 'center',
+  justifyContent: 'center',
 
   verticalAlign: 'middle',
   overflow: 'hidden',
-  us: 'none',
+  userSelect: 'none',
   boxSizing: 'border-box',
   position: 'relative',
   border: 'none',
   fontFamily: 'inherit',
   lineHeight: '1',
   outline: 'none',
-  fontWeight: '$medium',
+  fontWeight: '$regular',
   color: '$hiContrast',
 
   '&::before': {
@@ -93,124 +93,58 @@ const StyledAvatar = styled(AvatarPrimitive.Root, {
     bottom: 0,
     left: 0,
     br: 'inherit',
-    boxShadow: 'inset 0px 0px 1px rgba(0, 0, 0, 0.12)',
+    boxShadow: 'inset $1',
   },
 
   variants: {
     size: {
-      '1': {
-        w: '$3',
-        h: '$3',
-      },
-      '2': {
-        w: '$5',
-        h: '$5',
-      },
-      '3': {
-        w: '$6',
-        h: '$6',
-      },
-      '4': {
-        w: '$7',
-        h: '$7',
-      },
-      '5': {
-        w: '$8',
-        h: '$8',
-      },
-      '6': {
-        w: '$9',
-        h: '$9',
-      },
+      xs: { size: '$12' },
+      sm: { size: '$14' },
+      md: { size: '$16' },
+      lg: { size: '$18' },
+      xl: { size: '$19' },
+      '2xl': { size: '$20' },
     },
+
     variant: {
       hiContrast: {
         backgroundColor: '$hiContrast',
         color: '$loContrast',
       },
-      gray: {
-        backgroundColor: '$slate5',
-      },
-      tomato: {
-        backgroundColor: '$tomato5',
-      },
-      red: {
-        backgroundColor: '$red5',
-      },
-      crimson: {
-        backgroundColor: '$crimson5',
-      },
-      pink: {
-        backgroundColor: '$pink5',
-      },
-      plum: {
-        backgroundColor: '$plum5',
-      },
-      purple: {
-        backgroundColor: '$purple5',
-      },
-      violet: {
-        backgroundColor: '$violet5',
-      },
-      indigo: {
-        backgroundColor: '$indigo5',
-      },
-      blue: {
-        backgroundColor: '$blue5',
-      },
-      cyan: {
-        backgroundColor: '$cyan5',
-      },
-      teal: {
-        backgroundColor: '$teal5',
-      },
-      green: {
-        backgroundColor: '$green5',
-      },
-      grass: {
-        backgroundColor: '$grass5',
-      },
-      brown: {
-        backgroundColor: '$brown5',
-      },
-      bronze: {
-        backgroundColor: '$bronze5',
-      },
-      gold: {
-        backgroundColor: '$gold5',
-      },
-      sky: {
-        backgroundColor: '$sky5',
-      },
-      mint: {
-        backgroundColor: '$mint5',
-      },
-      lime: {
-        backgroundColor: '$lime5',
-      },
-      yellow: {
-        backgroundColor: '$yellow5',
-      },
-      amber: {
-        backgroundColor: '$amber5',
-      },
-      orange: {
-        backgroundColor: '$orange5',
-      },
+      gray: { backgroundColor: '$slate5' },
+      tomato: { backgroundColor: '$tomato5' },
+      red: { backgroundColor: '$red5' },
+      crimson: { backgroundColor: '$crimson5' },
+      pink: { backgroundColor: '$pink5' },
+      plum: { backgroundColor: '$plum5' },
+      purple: { backgroundColor: '$purple5' },
+      violet: { backgroundColor: '$violet5' },
+      indigo: { backgroundColor: '$indigo5' },
+      blue: { backgroundColor: '$blue5' },
+      cyan: { backgroundColor: '$cyan5' },
+      teal: { backgroundColor: '$teal5' },
+      green: { backgroundColor: '$green5' },
+      grass: { backgroundColor: '$grass5' },
+      brown: { backgroundColor: '$brown5' },
+      bronze: { backgroundColor: '$bronze5' },
+      gold: { backgroundColor: '$gold5' },
+      sky: { backgroundColor: '$sky5' },
+      mint: { backgroundColor: '$mint5' },
+      lime: { backgroundColor: '$lime5' },
+      yellow: { backgroundColor: '$yellow5' },
+      amber: { backgroundColor: '$amber5' },
+      orange: { backgroundColor: '$orange5' },
     },
+
     shape: {
-      square: {
-        borderRadius: '$2',
-      },
-      circle: {
-        borderRadius: '50%',
-      },
+      square: { borderRadius: '$md' },
+      circle: { borderRadius: '$round' },
     },
+
     inactive: {
-      true: {
-        opacity: '.3',
-      },
+      true: { opacity: '.3' },
     },
+
     interactive: {
       true: {
         '&::after': {
@@ -225,6 +159,7 @@ const StyledAvatar = styled(AvatarPrimitive.Root, {
           pointerEvents: 'none',
           transition: 'opacity 25ms linear',
         },
+
         '@hover': {
           '&:hover': {
             '&::after': {
@@ -232,6 +167,7 @@ const StyledAvatar = styled(AvatarPrimitive.Root, {
             },
           },
         },
+
         '&[data-state="open"]': {
           '&::after': {
             backgroundColor: 'rgba(0,0,0,.12)',
@@ -241,8 +177,9 @@ const StyledAvatar = styled(AvatarPrimitive.Root, {
       },
     },
   },
+
   defaultVariants: {
-    size: '2',
+    size: 'md',
     variant: 'gray',
     shape: 'circle',
   },
@@ -252,9 +189,8 @@ const StyledAvatarImage = styled(AvatarPrimitive.Image, {
   display: 'flex',
   objectFit: 'cover',
   boxSizing: 'border-box',
-  height: '100%',
   verticalAlign: 'middle',
-  width: '100%',
+  size: '$full',
 });
 
 const StyledAvatarFallback = styled(AvatarPrimitive.Fallback, {
@@ -262,40 +198,29 @@ const StyledAvatarFallback = styled(AvatarPrimitive.Fallback, {
 
   variants: {
     size: {
-      '1': {
-        fontSize: '1rem',
-        lineHeight: '1.5rem',
-      },
-      '2': {
-        fontSize: '$3',
-      },
-      '3': {
-        fontSize: '$6',
-      },
-      '4': {
-        fontSize: '$7',
-      },
-      '5': {
-        fontSize: '$8',
-      },
-      '6': {
-        fontSize: '$9',
-      },
+      xs: { fontSize: '$5' },
+      sm: { fontSize: '$6' },
+      md: { fontSize: '$7' },
+      lg: { fontSize: '$8' },
+      xl: { fontSize: '$9' },
+      '2xl': { fontSize: '$10' },
     },
   },
+
   defaultVariants: {
     size: '2',
   },
 });
 
 export const AvatarNestedItem = styled('div', {
-  boxShadow: '0 0 0 2px $colors$loContrast',
-  borderRadius: '50%',
+  boxShadow: '$1',
+  borderRadius: '$round',
 });
 
 export const AvatarGroup = styled('div', {
   display: 'flex',
   flexDirection: 'row-reverse',
+
   [`& ${AvatarNestedItem}:nth-child(n+2)`]: {
     marginRight: '-$1',
   },

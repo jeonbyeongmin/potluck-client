@@ -1,8 +1,7 @@
+import { styled } from 'stitches.config';
 import Logo from 'components/assets/Logo';
 import { Avatar } from 'components/Avatar';
-import { Link, Text } from 'components/primitive';
-import React from 'react';
-import { styled } from 'stitches.config';
+import { Link } from 'components/primitive';
 
 function Header() {
   return (
@@ -18,13 +17,13 @@ function Header() {
 const HeaderWrapper = styled('header', {
   w: '$full',
   h: '6rem',
-  px: '$4',
+  px: '$8',
 
   display: 'flex',
-  ai: 'center',
-  jc: 'space-between',
+  alignItems: 'center',
+  justifyContent: 'space-between',
 
-  bc: 'white',
+  bgColor: 'white',
 });
 
 export default Header;

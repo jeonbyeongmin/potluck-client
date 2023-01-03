@@ -2,71 +2,69 @@ import { styled } from 'stitches.config';
 
 export const IconButton = styled('button', {
   // Reset
-  p: '0',
+  padding: '0',
   display: 'inline-flex',
-  ai: 'center',
-  jc: 'center',
-  fs: 0,
-  us: 'none',
+  alignItems: 'center',
+  justifyContent: 'center',
+  flexShrink: 0,
+  userSelect: 'none',
   appearance: 'none',
   borderWidth: '0',
-  boxSizing: 'border-box',
   fontFamily: 'inherit',
+  boxSizing: 'border-box',
+  '&::before': { boxSizing: 'border-box' },
+  '&::after': { boxSizing: 'border-box' },
 
   lineHeight: '1',
   outline: 'none',
   textDecoration: 'none',
   WebkitTapHighlightColor: 'transparent',
   color: '$hiContrast',
-  '&::before': {
-    boxSizing: 'border-box',
-  },
-  '&::after': {
-    boxSizing: 'border-box',
-  },
   backgroundColor: '$loContrast',
-  border: '1px solid $slate7',
+
   '@hover': {
     '&:hover': {
       borderColor: '$slate8',
     },
   },
+
   '&:active': {
     backgroundColor: '$slate2',
   },
-  '&:focus': {
-    borderColor: '$slate8',
-    boxShadow: '0 0 0 1px $colors$slate8',
-  },
+
   '&:disabled': {
     pointerEvents: 'none',
     backgroundColor: 'transparent',
     color: '$slate6',
   },
 
-  transition: 'all 200ms ease-out',
+  transition: '$fast',
 
   variants: {
     size: {
-      '1': {
-        borderRadius: '$2',
-        height: '$5',
-        width: '$5',
+      xs: {
+        borderRadius: '$xs',
+        size: '$8',
       },
-      '2': {
-        borderRadius: '$3',
-        height: '$6',
-        width: '$6',
+      sm: {
+        borderRadius: '$sm',
+        size: '$9',
       },
-      '3': {
-        borderRadius: '$4',
-        height: '$7',
-        width: '$7',
+      md: {
+        borderRadius: '$sm',
+        size: '$10',
       },
-      '4': {
-        borderRadius: '$5',
-        height: '$8',
-        width: '$8',
+      lg: {
+        borderRadius: '$lg',
+        size: '$11',
+      },
+      xl: {
+        borderRadius: '$xl',
+        size: '$12',
+      },
+      '2xl': {
+        borderRadius: '$xl',
+        size: '$13',
       },
     },
 
@@ -79,10 +77,7 @@ export const IconButton = styled('button', {
             backgroundColor: '$slateA3',
           },
         },
-        '&:focus': {
-          boxShadow:
-            'inset 0 0 0 1px $colors$slateA8, 0 0 0 1px $colors$slateA8',
-        },
+
         '&:active': {
           backgroundColor: '$slateA4',
         },
@@ -101,16 +96,19 @@ export const IconButton = styled('button', {
               '0 0 transparent, 0 16px 32px hsl(206deg 12% 5% / 25%), 0 3px 5px hsl(0deg 0% 0% / 10%)',
           },
         },
+
         '&:focus': {
           borderColor: '$slate8',
           boxShadow:
             '0 0 0 1px $colors$slate8, 0 16px 32px hsl(206deg 12% 5% / 25%), 0 3px 5px hsl(0deg 0% 0% / 10%)',
         },
+
         '&:active': {
           backgroundColor: '$slate4',
         },
       },
     },
+
     state: {
       active: {
         backgroundColor: '$slate4',
@@ -124,6 +122,7 @@ export const IconButton = styled('button', {
           backgroundColor: '$slate4',
         },
       },
+
       waiting: {
         backgroundColor: '$slate4',
         boxShadow: 'inset 0 0 0 1px hsl(206,10%,76%)',
@@ -138,8 +137,9 @@ export const IconButton = styled('button', {
       },
     },
   },
+
   defaultVariants: {
-    size: '1',
+    size: 'md',
     variant: 'ghost',
   },
 });

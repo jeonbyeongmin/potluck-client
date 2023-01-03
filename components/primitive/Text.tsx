@@ -2,118 +2,66 @@ import { styled } from 'stitches.config';
 
 export const Text = styled('span', {
   // Reset
-  lh: '1',
-  m: '0',
-  fontWeight: 400,
+  margin: 0,
   fontVariantNumeric: 'tabular-nums',
   display: 'block',
 
   variants: {
     size: {
-      '1': {
-        fontSize: '$1',
-        lineHeight: '$1',
+      xs: {
+        fontSize: '$xs',
+        lineHeight: '$xs',
       },
-      '2': {
-        fontSize: '$2',
-        lineHeight: '$1',
+      sm: {
+        fontSize: '$sm',
+        lineHeight: '$sm',
       },
-      '3': {
-        fontSize: '$3',
-        lineHeight: '$1',
+      md: {
+        fontSize: '$md',
+        lineHeight: '$md',
       },
-      '4': {
-        fontSize: '$4',
+      lg: {
+        fontSize: '$lg',
+        lineHeight: '$lg',
       },
-      '5': {
-        fontSize: '$5',
-        letterSpacing: '-.015em',
+      xl: {
+        fontSize: '$xl',
+        lineHeight: '$xl',
       },
-      '6': {
-        fontSize: '$6',
-        letterSpacing: '-.016em',
+      '2xl': {
+        fontSize: '$2xl',
+        lineHeight: '$2xl',
       },
-      '7': {
-        fontSize: '$7',
-        letterSpacing: '-.031em',
-        textIndent: '-.005em',
-      },
-      '8': {
-        fontSize: '$8',
-        letterSpacing: '-.034em',
-        textIndent: '-.018em',
-      },
-      '9': {
-        fontSize: '$9',
-        letterSpacing: '-.055em',
-        textIndent: '-.025em',
+      '3xl': {
+        fontSize: '$3xl',
+        lineHeight: '$3xl',
       },
     },
 
     weight: {
-      light: {
-        fontWeight: 300,
-      },
-      regular: {
-        fontWeight: 400,
-      },
-      bold: {
-        fontWeight: 700,
-      },
+      light: { fontWeight: '$light' },
+      regular: { fontWeight: '$regular' },
+      bold: { fontWeight: '$bold' },
     },
 
-    variant: {
-      red: {
-        color: '$red11',
-      },
-      crimson: {
-        color: '$crimson11',
-      },
-      pink: {
-        color: '$pink11',
-      },
-      purple: {
-        color: '$purple11',
-      },
-      violet: {
-        color: '$violet11',
-      },
-      indigo: {
-        color: '$indigo11',
-      },
-      blue: {
-        color: '$blue11',
-      },
-      cyan: {
-        color: '$cyan11',
-      },
-      teal: {
-        color: '$teal11',
-      },
-      green: {
-        color: '$green11',
-      },
-      lime: {
-        color: '$lime11',
-      },
-      yellow: {
-        color: '$yellow11',
-      },
-      orange: {
-        color: '$orange11',
-      },
-      gold: {
-        color: '$gold11',
-      },
-      bronze: {
-        color: '$bronze11',
-      },
-      gray: {
-        color: '$slate11',
-      },
-      contrast: {
-        color: '$hiContrast',
-      },
+    color: {
+      red: { color: '$red11' },
+      crimson: { color: '$crimson11' },
+      pink: { color: '$pink11' },
+      purple: { color: '$purple11' },
+      violet: { color: '$violet11' },
+      indigo: { color: '$indigo11' },
+      blue: { color: '$blue11' },
+      cyan: { color: '$cyan11' },
+      teal: { color: '$teal11' },
+      green: { color: '$green11' },
+      lime: { color: '$lime11' },
+      yellow: { color: '$yellow11' },
+      orange: { color: '$orange11' },
+      gold: { color: '$gold11' },
+      bronze: { color: '$bronze11' },
+      gray: { color: '$slate11' },
+      contrast: { color: '$hiContrast' },
     },
 
     gradient: {
@@ -157,119 +105,119 @@ export const Text = styled('span', {
 
   compoundVariants: [
     {
-      variant: 'red',
+      color: 'red',
       gradient: 'true',
       css: {
         background: 'linear-gradient(to right, $red11, $crimson11)',
       },
     },
     {
-      variant: 'crimson',
+      color: 'crimson',
       gradient: 'true',
       css: {
         background: 'linear-gradient(to right, $crimson11, $pink11)',
       },
     },
     {
-      variant: 'pink',
+      color: 'pink',
       gradient: 'true',
       css: {
         background: 'linear-gradient(to right, $pink11, $purple11)',
       },
     },
     {
-      variant: 'purple',
+      color: 'purple',
       gradient: 'true',
       css: {
         background: 'linear-gradient(to right, $purple11, $violet11)',
       },
     },
     {
-      variant: 'violet',
+      color: 'violet',
       gradient: 'true',
       css: {
         background: 'linear-gradient(to right, $violet11, $indigo11)',
       },
     },
     {
-      variant: 'indigo',
+      color: 'indigo',
       gradient: 'true',
       css: {
         background: 'linear-gradient(to right, $indigo11, $blue11)',
       },
     },
     {
-      variant: 'blue',
+      color: 'blue',
       gradient: 'true',
       css: {
         background: 'linear-gradient(to right, $blue11, $cyan11)',
       },
     },
     {
-      variant: 'cyan',
+      color: 'cyan',
       gradient: 'true',
       css: {
         background: 'linear-gradient(to right, $cyan11, $teal11)',
       },
     },
     {
-      variant: 'teal',
+      color: 'teal',
       gradient: 'true',
       css: {
         background: 'linear-gradient(to right, $teal11, $green11)',
       },
     },
     {
-      variant: 'green',
+      color: 'green',
       gradient: 'true',
       css: {
         background: 'linear-gradient(to right, $green11, $lime11)',
       },
     },
     {
-      variant: 'lime',
+      color: 'lime',
       gradient: 'true',
       css: {
         background: 'linear-gradient(to right, $lime11, $yellow11)',
       },
     },
     {
-      variant: 'yellow',
+      color: 'yellow',
       gradient: 'true',
       css: {
         background: 'linear-gradient(to right, $yellow11, $orange11)',
       },
     },
     {
-      variant: 'orange',
+      color: 'orange',
       gradient: 'true',
       css: {
         background: 'linear-gradient(to right, $orange11, $red11)',
       },
     },
     {
-      variant: 'gold',
+      color: 'gold',
       gradient: 'true',
       css: {
         background: 'linear-gradient(to right, $gold11, $gold9)',
       },
     },
     {
-      variant: 'bronze',
+      color: 'bronze',
       gradient: 'true',
       css: {
         background: 'linear-gradient(to right, $bronze11, $bronze9)',
       },
     },
     {
-      variant: 'gray',
+      color: 'gray',
       gradient: 'true',
       css: {
         background: 'linear-gradient(to right, $gray11, $gray12)',
       },
     },
     {
-      variant: 'contrast',
+      color: 'contrast',
       gradient: 'true',
       css: {
         background: 'linear-gradient(to right, $hiContrast, $gray12)',
@@ -278,8 +226,8 @@ export const Text = styled('span', {
   ],
 
   defaultVariants: {
-    size: '3',
+    size: 'md',
     weight: 'regular',
-    variant: 'contrast',
+    color: 'contrast',
   },
 });
