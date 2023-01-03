@@ -1,39 +1,38 @@
 import { styled } from 'stitches.config';
 
 const List = styled('ul', {
-  listStyle: 'none',
   w: '$full',
-  p: 0,
-  m: 0,
-  fd: 'column',
-  jc: 'start',
-  ai: 'start',
-  gap: '1rem',
+  margin: 0,
+  padding: 0,
+  listStyle: 'none',
 });
 
 const ListItem = styled('li', {
   w: '$full',
-  h: '4.5rem',
+  h: '$20',
 
   display: 'flex',
   gap: '1.5rem',
-  fd: 'row',
-  jc: 'start',
-  ai: 'center',
-  p: '1rem',
-  bc: 'white',
-  br: '$3',
-  cursor: 'pointer',
-  transition: 'all 0.2s ease-in-out',
+  flexDirection: 'row',
+  justifyContent: 'start',
+  alignItems: 'center',
+  padding: '1rem',
+  bgColor: 'white',
+  br: '$md',
 
-  '&:hover': {
-    bc: '$gray3',
+  cursor: 'pointer',
+  transition: '$fast',
+
+  '@hover': {
+    '&:hover': {
+      bgColor: '$gray3',
+    },
   },
 
   variants: {
     active: {
       true: {
-        bc: '$gray3',
+        bgColor: '$gray3',
       },
     },
   },

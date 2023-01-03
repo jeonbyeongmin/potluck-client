@@ -41,12 +41,12 @@ function Card({
       <MetaContainer justify="between">
         <CategoriesWrapper gap={1}>
           {categories.map((category) => (
-            <Text size={1} variant="purple">
+            <Text size="xs" color="purple">
               {`#${category}`}
             </Text>
           ))}
         </CategoriesWrapper>
-        <Text size={1} variant="gray">
+        <Text size="xs" color="gray">
           {`${author} | ${publishedAt}`}
         </Text>
       </MetaContainer>
@@ -57,7 +57,7 @@ function Card({
             {title}
           </Text>
         </Flex>
-        <Text size={1} maxLines={1} variant="gray">
+        <Text size="xs" maxLines={1} color="gray">
           {description}
         </Text>
       </Flex>
@@ -65,7 +65,7 @@ function Card({
       <Flex align="center">
         <ProfileContainer align="center" gap={1}>
           <Avatar src="https://i.pravatar.cc/200" />
-          <Text size={1} variant="gray">
+          <Text size="xs" color="gray">
             전병민
           </Text>
         </ProfileContainer>

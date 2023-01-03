@@ -1,41 +1,30 @@
 import { styled } from 'stitches.config';
 
 export const Status = styled('div', {
-  br: '50%',
-  fs: 0,
+  br: '$round',
+  flexShrink: 0,
 
   variants: {
     size: {
-      '1': {
-        w: 5,
-        h: 5,
-      },
-      '2': {
-        w: 9,
-        h: 9,
-      },
+      xs: { size: '$5' },
+      sm: { size: '$5' },
+      md: { size: '$5' },
+      lg: { size: '$9' },
+      xl: { size: '$9' },
+      '2xl': { size: '$9' },
     },
+
     variant: {
-      gray: {
-        bc: '$slate7',
-      },
-      blue: {
-        bc: '$blue9',
-      },
-      green: {
-        bc: '$green9',
-      },
-      yellow: {
-        bc: '$yellow9',
-      },
-      red: {
-        bc: '$red9',
-      },
+      gray: { bgColor: '$slate7' },
+      blue: { bgColor: '$blue9' },
+      green: { bgColor: '$green9' },
+      yellow: { bgColor: '$yellow9' },
+      red: { bgColor: '$red9' },
     },
   },
 
   defaultVariants: {
-    size: '2',
+    size: 'md',
     variant: 'gray',
   },
 });

@@ -3,28 +3,15 @@ import { styled } from 'stitches.config';
 import NextLink from 'next/link';
 
 export const Link = styled(NextLink, {
-  alignItems: 'center',
   gap: '$1',
   flexShrink: 0,
   outline: 'none',
+  alignItems: 'center',
   textDecorationLine: 'none',
   textUnderlineOffset: '3px',
   textDecorationColor: '$slate4',
   WebkitTapHighlightColor: 'rgba(0,0,0,0)',
   lineHeight: 'inherit',
-
-  '@hover': {
-    '&:hover': {
-      textDecorationLine: 'underline',
-    },
-  },
-
-  '&:focus': {
-    outlineWidth: '2px',
-    outlineStyle: 'solid',
-    outlineOffset: '2px',
-    textDecorationLine: 'none',
-  },
 
   [`& ${Text}`]: {
     color: 'inherit',
@@ -39,11 +26,13 @@ export const Link = styled(NextLink, {
 
       blue: {
         color: '$blue11',
+        textDecoration: 'underline',
         textDecorationColor: '$blue4',
       },
 
       subtle: {
         color: '$slate11',
+        textDecoration: 'underline',
         textDecorationColor: '$slate4',
       },
 

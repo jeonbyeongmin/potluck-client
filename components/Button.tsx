@@ -6,12 +6,8 @@ export const Button = styled('button', {
   alignItems: 'center',
   boxSizing: 'border-box',
   userSelect: 'none',
-  '&::before': {
-    boxSizing: 'border-box',
-  },
-  '&::after': {
-    boxSizing: 'border-box',
-  },
+  '&::before': { boxSizing: 'border-box' },
+  '&::after': { boxSizing: 'border-box' },
 
   // Custom reset?
   display: 'inline-flex',
@@ -23,9 +19,8 @@ export const Button = styled('button', {
   // Custom
   height: '$5',
   px: '$2',
-  fontFamily: '$untitled',
-  fontSize: '$2',
-  fontWeight: 500,
+  fontSize: '$md',
+  fontWeight: '$regular',
   fontVariantNumeric: 'tabular-nums',
 
   '&:disabled': {
@@ -37,22 +32,43 @@ export const Button = styled('button', {
 
   variants: {
     size: {
-      '1': {
-        borderRadius: '$1',
+      xs: {
+        borderRadius: '$xs',
         height: '$5',
         px: '$2',
         fontSize: '$1',
         lineHeight: '$sizes$5',
       },
-      '2': {
-        borderRadius: '$2',
+      sm: {
+        borderRadius: '$sm',
         height: '$6',
         px: '$3',
         fontSize: '$3',
         lineHeight: '$sizes$6',
       },
-      '3': {
-        borderRadius: '$2',
+      md: {
+        borderRadius: '$md',
+        height: '$7',
+        px: '$4',
+        fontSize: '$4',
+        lineHeight: '$sizes$7',
+      },
+      lg: {
+        borderRadius: '$lg',
+        height: '$7',
+        px: '$4',
+        fontSize: '$4',
+        lineHeight: '$sizes$7',
+      },
+      xl: {
+        borderRadius: '$xl',
+        height: '$7',
+        px: '$4',
+        fontSize: '$4',
+        lineHeight: '$sizes$7',
+      },
+      '2xl': {
+        borderRadius: '$2xl',
         height: '$7',
         px: '$4',
         fontSize: '$4',
@@ -326,6 +342,7 @@ export const Button = styled('button', {
       },
     },
   ],
+
   defaultVariants: {
     size: '1',
     variant: 'gray',
