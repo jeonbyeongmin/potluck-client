@@ -3,12 +3,12 @@ import Head from 'next/head';
 import Header from 'components/layouts/Header';
 import { Box, Flex } from 'components/primitive';
 
-interface PartyLayoutProps {
+interface LayoutProps {
   title?: string;
   children: ReactNode;
 }
 
-function PartyLayout({ children, title = 'Potluck' }: PartyLayoutProps) {
+function Layout({ children, title = 'Potluck' }: LayoutProps) {
   return (
     <>
       <Head>
@@ -22,4 +22,4 @@ function PartyLayout({ children, title = 'Potluck' }: PartyLayoutProps) {
   );
 }
 
-export default PartyLayout;
+export default Layout;
