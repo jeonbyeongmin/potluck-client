@@ -1,6 +1,13 @@
-import { styled } from 'stitches.config';
+import { ComponentProps, ElementRef, forwardRef } from 'react';
+import { CSS, styled } from 'stitches.config';
 
-export const Text = styled('span', {
+type TextVariants = ComponentProps<typeof CustomText>;
+type TextProps = TextVariants & {
+  css?: CSS;
+  content: string;
+};
+
+const CustomText = styled('span', {
   // Reset
   margin: 0,
   fontVariantNumeric: 'tabular-nums',
@@ -231,3 +238,13 @@ export const Text = styled('span', {
     color: 'contrast',
   },
 });
+
+export const Text = forwardRef<ElementRef<typeof CustomText>, TextProps>(
+  ({ content, ...props }, forwardedRef) => {
+    return (
+      <CustomText ref={forwardedRef} {...props}>
+        {content}
+      </CustomText>
+    );
+  }
+);
