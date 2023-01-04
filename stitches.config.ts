@@ -352,6 +352,7 @@ export const {
       full: '100%',
       max: 'max-content',
       min: 'min-content',
+      fit: 'fit-content',
       screen: '100vw',
     },
 
@@ -391,10 +392,10 @@ export const {
 
     radii: {
       xs: '0.4rem',
-      sm: '0.6rem',
-      md: '0.8rem',
-      lg: '1.2rem',
-      xl: '1.6rem',
+      sm: '0.5rem',
+      md: '0.6rem',
+      lg: '0.8rem',
+      xl: '1.0rem',
       none: '0',
       round: '50%',
       pill: '9999px',
@@ -417,12 +418,7 @@ export const {
     },
 
     shadows: {
-      1: '0 0.1rem 0.2rem rgba(0, 0, 0, 0.05)',
-      2: '0 0.2rem 0.4rem rgba(0, 0, 0, 0.05)',
-      3: '0 0.4rem 0.8rem rgba(0, 0, 0, 0.05)',
-      4: '0 0.8rem 1.6rem rgba(0, 0, 0, 0.05)',
-      5: '0 1.6rem 3.2rem rgba(0, 0, 0, 0.05)',
-      6: '0 3.2rem 6.4rem rgba(0, 0, 0, 0.05)',
+      1: '0 0.4rem 3.2rem 0 rgba(0, 0, 0, 0.1)',
     },
 
     transitions: {
