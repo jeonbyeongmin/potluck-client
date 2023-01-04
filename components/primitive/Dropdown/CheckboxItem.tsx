@@ -1,6 +1,6 @@
 import {
-  CheckboxItem as PrimitiveCheckboxItem,
   ItemIndicator,
+  CheckboxItem as PrimitiveCheckboxItem,
 } from '@radix-ui/react-dropdown-menu';
 import { CheckIcon, DividerHorizontalIcon } from '@radix-ui/react-icons';
 import { ComponentProps, ElementRef, forwardRef } from 'react';
