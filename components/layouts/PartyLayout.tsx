@@ -1,7 +1,6 @@
 import { ReactNode } from 'react';
 import Head from 'next/head';
 import Header from 'components/layouts/Header';
-import { Nav } from 'components/layouts/Nav';
 import { Box, Flex } from 'components/primitive';
 
 interface PartyLayoutProps {
@@ -18,10 +17,7 @@ function PartyLayout({ children, title = 'Potluck' }: PartyLayoutProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Header />
-      <Flex direction="row">
-        <Nav />
-        <Box>{children}</Box>
-      </Flex>
+      <Box>{children}</Box>
     </>
   );
 }
