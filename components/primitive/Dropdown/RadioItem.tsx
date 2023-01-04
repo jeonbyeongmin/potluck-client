@@ -1,23 +1,28 @@
 import { ComponentProps, ElementRef, forwardRef } from 'react';
-import { ItemIndicator, RadioItem } from '@radix-ui/react-dropdown-menu';
+import {
+  ItemIndicator,
+  RadioItem as PrimitiveRadioItem,
+} from '@radix-ui/react-dropdown-menu';
 import { CheckIcon } from '@radix-ui/react-icons';
 import { CSS } from 'stitches.config';
 
-type DropdownMenuRadioItemPrimitiveProps = ComponentProps<typeof RadioItem>;
+type DropdownMenuRadioItemPrimitiveProps = ComponentProps<
+  typeof PrimitiveRadioItem
+>;
 type DropdownMenuRadioItemProps = DropdownMenuRadioItemPrimitiveProps & {
   css?: CSS;
 };
 
-export const DropdownMenuRadioItem = forwardRef<
-  ElementRef<typeof RadioItem>,
+export const RadioItem = forwardRef<
+  ElementRef<typeof PrimitiveRadioItem>,
   DropdownMenuRadioItemProps
 >(({ children, ...props }, forwardedRef) => {
   return (
-    <RadioItem {...props} ref={forwardedRef}>
+    <PrimitiveRadioItem {...props} ref={forwardedRef}>
       {children}
       <ItemIndicator>
         <CheckIcon />
       </ItemIndicator>
-    </RadioItem>
+    </PrimitiveRadioItem>
   );
 });

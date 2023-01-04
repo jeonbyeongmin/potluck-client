@@ -1,26 +1,27 @@
-import { CheckboxItem, ItemIndicator } from '@radix-ui/react-dropdown-menu';
+import {
+  CheckboxItem as PrimitiveCheckboxItem,
+  ItemIndicator,
+} from '@radix-ui/react-dropdown-menu';
 import { CheckIcon, DividerHorizontalIcon } from '@radix-ui/react-icons';
 import { ComponentProps, ElementRef, forwardRef } from 'react';
 import { CSS } from 'stitches.config';
 
-type DropdownMenuCheckboxItemPrimitiveProps = ComponentProps<
-  typeof CheckboxItem
->;
-type DropdownMenuCheckboxItemProps = DropdownMenuCheckboxItemPrimitiveProps & {
+type CheckboxItemPrimitiveProps = ComponentProps<typeof PrimitiveCheckboxItem>;
+type CheckboxItemProps = CheckboxItemPrimitiveProps & {
   css?: CSS;
 };
 
-export const DropdownMenuCheckboxItem = forwardRef<
-  ElementRef<typeof CheckboxItem>,
-  DropdownMenuCheckboxItemProps
+export const CheckboxItem = forwardRef<
+  ElementRef<typeof PrimitiveCheckboxItem>,
+  CheckboxItemProps
 >(({ children, ...props }, forwardedRef) => {
   return (
-    <CheckboxItem {...props} ref={forwardedRef}>
+    <PrimitiveCheckboxItem {...props} ref={forwardedRef}>
       {children}
       <ItemIndicator>
         {props.checked === 'indeterminate' && <DividerHorizontalIcon />}
         {props.checked === true && <CheckIcon />}
       </ItemIndicator>
-    </CheckboxItem>
+    </PrimitiveCheckboxItem>
   );
 });
