@@ -1,70 +1,24 @@
-import React from 'react';
 import { styled, VariantProps, CSS } from 'stitches.config';
 import * as AvatarPrimitive from '@radix-ui/react-avatar';
-import { Box, Status } from 'components/primitive';
+import { ComponentProps, ElementRef, forwardRef, ReactNode } from 'react';
+import { Box } from 'components/primitive/Box';
+import { Status } from 'components/primitive/Status';
 
 type StatusVariants = VariantProps<typeof Status>;
 type StatusColors = Pick<StatusVariants, 'variant'>;
 
-type AvatarVariants = VariantProps<typeof StyledAvatar>;
-type AvatarPrimitiveProps = React.ComponentProps<typeof AvatarPrimitive.Root>;
+type AvatarVariants = VariantProps<typeof CustomAvatar>;
+type AvatarPrimitiveProps = ComponentProps<typeof AvatarPrimitive.Root>;
 type AvatarOwnProps = AvatarPrimitiveProps &
   AvatarVariants & {
     css?: CSS;
     alt?: string;
     src?: string;
-    fallback?: React.ReactNode;
+    fallback?: ReactNode;
     status?: StatusColors['variant'];
   };
 
-export const Avatar = React.forwardRef<
-  React.ElementRef<typeof StyledAvatar>,
-  AvatarOwnProps
->(
-  (
-    { alt, src, fallback, size, variant, shape, css, status, ...props },
-    forwardedRef
-  ) => {
-    return (
-      <Box
-        css={{
-          ...css,
-          position: 'relative',
-          height: 'fit-content',
-          width: 'fit-content',
-        }}
-      >
-        <StyledAvatar
-          {...props}
-          ref={forwardedRef}
-          size={size}
-          variant={variant}
-          shape={shape}
-        >
-          <StyledAvatarImage alt={alt} src={src} />
-          <StyledAvatarFallback size={size}>{fallback}</StyledAvatarFallback>
-        </StyledAvatar>
-        {status && (
-          <Box
-            css={{
-              position: 'absolute',
-              bottom: '0',
-              right: '0',
-              boxShadow: '0 0 0 3px $colors$loContrast',
-              borderRadius: '$round',
-              mr: '-3px',
-              mb: '-3px',
-            }}
-          >
-            <Status size={size} variant={status} />
-          </Box>
-        )}
-      </Box>
-    );
-  }
-);
-
-const StyledAvatar = styled(AvatarPrimitive.Root, {
+const CustomAvatar = styled(AvatarPrimitive.Root, {
   m: '0',
   p: '0',
 
@@ -185,7 +139,7 @@ const StyledAvatar = styled(AvatarPrimitive.Root, {
   },
 });
 
-const StyledAvatarImage = styled(AvatarPrimitive.Image, {
+const CustomAvatarImage = styled(AvatarPrimitive.Image, {
   display: 'flex',
   objectFit: 'cover',
   boxSizing: 'border-box',
@@ -193,22 +147,22 @@ const StyledAvatarImage = styled(AvatarPrimitive.Image, {
   size: '$full',
 });
 
-const StyledAvatarFallback = styled(AvatarPrimitive.Fallback, {
+const CustomAvatarFallback = styled(AvatarPrimitive.Fallback, {
   textTransform: 'uppercase',
 
   variants: {
     size: {
-      xs: { fontSize: '$5' },
-      sm: { fontSize: '$6' },
-      md: { fontSize: '$7' },
-      lg: { fontSize: '$8' },
-      xl: { fontSize: '$9' },
-      '2xl': { fontSize: '$10' },
+      xs: { fontSize: '$xs' },
+      sm: { fontSize: '$sm' },
+      md: { fontSize: '$md' },
+      lg: { fontSize: '$lg' },
+      xl: { fontSize: '$xl' },
+      '2xl': { fontSize: '$2xl' },
     },
   },
 
   defaultVariants: {
-    size: '2',
+    size: 'md',
   },
 });
 
@@ -225,3 +179,49 @@ export const AvatarGroup = styled('div', {
     marginRight: '-$1',
   },
 });
+
+export const Avatar = forwardRef<
+  ElementRef<typeof CustomAvatar>,
+  AvatarOwnProps
+>(
+  (
+    { alt, src, fallback, size, variant, shape, css, status, ...props },
+    forwardedRef
+  ) => {
+    return (
+      <Box
+        css={{
+          ...css,
+          position: 'relative',
+          size: '$fit',
+        }}
+      >
+        <CustomAvatar
+          {...props}
+          ref={forwardedRef}
+          size={size}
+          variant={variant}
+          shape={shape}
+        >
+          <CustomAvatarImage alt={alt} src={src} />
+          <CustomAvatarFallback size={size}>{fallback}</CustomAvatarFallback>
+        </CustomAvatar>
+        {status && (
+          <Box
+            css={{
+              position: 'absolute',
+              bottom: '0',
+              right: '0',
+              boxShadow: '0 0 0 3px $colors$loContrast',
+              borderRadius: '$round',
+              mr: '-3px',
+              mb: '-3px',
+            }}
+          >
+            <Status size={size} variant={status} />
+          </Box>
+        )}
+      </Box>
+    );
+  }
+);

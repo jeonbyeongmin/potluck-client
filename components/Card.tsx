@@ -1,5 +1,5 @@
 import * as AspectRatio from '@radix-ui/react-aspect-ratio';
-import { Avatar } from 'components/Avatar';
+import { Avatar } from 'components/primitive/Avatar';
 import { CommentsIcon, DotsVerticalIcon } from 'components/icons';
 import { IconButton } from 'components/IconButton';
 import { Box, Flex, Text } from 'components/primitive';
