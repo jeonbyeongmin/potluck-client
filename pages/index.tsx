@@ -1,4 +1,4 @@
-import PartyLayout from 'components/layouts/PartyLayout';
+import PartyLayout from 'components/layouts/Layout';
 import { Box } from 'components/primitive';
 
 export default function Home() {

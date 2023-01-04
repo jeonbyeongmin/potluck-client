@@ -1,5 +1,5 @@
 import React from 'react';
-import PartyLayout from 'components/layouts/PartyLayout';
+import PartyLayout from 'components/layouts/Layout';
 import Card from 'components/Card';
 
 function PartyPage() {
