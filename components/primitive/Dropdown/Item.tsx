@@ -1,7 +1,7 @@
-import { Item } from '@radix-ui/react-dropdown-menu';
+import { Item as PrimitiveItem } from '@radix-ui/react-dropdown-menu';
 import { styled } from 'stitches.config';
 
-export const DropdownMenuItem = styled(Item, {
+export const Item = styled(PrimitiveItem, {
   alignItems: 'center',
   backgroundColor: 'transparent',
   border: 0,

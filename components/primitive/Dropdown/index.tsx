@@ -1,23 +1,23 @@
-import { DropdownMenu } from 'components/primitive/Dropdown/DropdownMenu';
-import { DropdownMenuCheckboxItem } from 'components/primitive/Dropdown/DropdownMenuCheckboxItem';
-import { DropdownMenuContent } from 'components/primitive/Dropdown/DropdownMenuContent';
-import { DropdownMenuGroup } from 'components/primitive/Dropdown/DropdownMenuGroup';
-import { DropdownMenuItem } from 'components/primitive/Dropdown/DropdownMenuItem';
-import { DropdownMenuLabel } from 'components/primitive/Dropdown/DropdownMenuLabel';
-import { DropdownMenuRadioGroup } from 'components/primitive/Dropdown/DropdownMenuRadioGroup';
-import { DropdownMenuRadioItem } from 'components/primitive/Dropdown/DropdownMenuRadioItem';
-import { DropdownMenuSeparator } from 'components/primitive/Dropdown/DropdownMenuSeparator';
-import { DropdownMenuTrigger } from 'components/primitive/Dropdown/DropdownMenuTrigger';
+import { Root } from 'components/primitive/Dropdown/Root';
+import { CheckboxItem } from 'components/primitive/Dropdown/CheckboxItem';
+import { Content } from 'components/primitive/Dropdown/Content';
+import { Group } from 'components/primitive/Dropdown/Group';
+import { Item } from 'components/primitive/Dropdown/Item';
+import { Label } from 'components/primitive/Dropdown/Label';
+import { RadioGroup } from 'components/primitive/Dropdown/RadioGroup';
+import { RadioItem } from 'components/primitive/Dropdown/RadioItem';
+import { Separator } from 'components/primitive/Dropdown/Separator';
+import { Trigger } from 'components/primitive/Dropdown/Trigger';
 
 export {
-  DropdownMenu,
-  DropdownMenuCheckboxItem,
-  DropdownMenuContent,
-  DropdownMenuGroup,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuRadioGroup,
-  DropdownMenuRadioItem,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
+  Root,
+  CheckboxItem,
+  Content,
+  Group,
+  Item,
+  Label,
+  RadioGroup,
+  RadioItem,
+  Separator,
+  Trigger,
 };

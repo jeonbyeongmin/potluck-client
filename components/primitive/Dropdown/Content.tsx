@@ -1,13 +1,19 @@
+import {
+  Content as PrimitiveContent,
+  Arrow,
+  Portal,
+} from '@radix-ui/react-dropdown-menu';
 import { ComponentProps, ElementRef, forwardRef } from 'react';
-import { Content, Arrow, Portal } from '@radix-ui/react-dropdown-menu';
 import { CSS, styled } from 'stitches.config';
 
-type DropdownMenuContentPrimitiveProps = ComponentProps<typeof Content>;
+type DropdownMenuContentPrimitiveProps = ComponentProps<
+  typeof PrimitiveContent
+>;
 type DropdownMenuContentProps = DropdownMenuContentPrimitiveProps & {
   css?: CSS;
 };
 
-const CustomDropdownMenuContent = styled(Content, {
+const CustomDropdownMenuContent = styled(PrimitiveContent, {
   backgroundColor: '$panel',
   borderRadius: '$1',
   border: '1px solid $panelBorder',
@@ -19,7 +25,7 @@ const CustomDropdownMenuContent = styled(Content, {
   zIndex: 1,
 });
 
-export const DropdownMenuContent = forwardRef<
+export const Content = forwardRef<
   ElementRef<typeof CustomDropdownMenuContent>,
   DropdownMenuContentProps
 >(({ children, ...props }, forwardedRef) => {
