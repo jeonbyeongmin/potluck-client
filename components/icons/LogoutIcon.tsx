@@ -1,4 +1,5 @@
-import { Svg, Path } from 'components/icons/common/iconStyles';
+import { Path, Svg } from 'components/icons/common/iconStyles';
+
 import { IconProps } from 'components/icons/common/iconTypes';
 
 function LogoutIcon({ size = 24, color = 'gray12' }: IconProps) {
