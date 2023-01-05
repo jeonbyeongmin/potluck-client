@@ -1,9 +1,11 @@
+import * as Dropdown from 'components/primitive/Dropdown';
+
+import { Avatar, Link, Text } from 'components/primitive';
+import { LogoutIcon, UserIcon } from 'components/icons';
+
+import Logo from 'components/assets/Logo';
 import { styled } from 'stitches.config';
 import useToggle from 'hooks/useToggle';
-import Logo from 'components/assets/Logo';
-import { Avatar, Link, Text } from 'components/primitive';
-import * as Dropdown from 'components/primitive/Dropdown';
-import { LogoutIcon, UserIcon } from 'components/icons';
 
 function Header() {
   const [open, handleOpenChange] = useToggle(false);

@@ -1,9 +1,9 @@
-import {
-  Content as PrimitiveContent,
-  Portal,
-} from '@radix-ui/react-dropdown-menu';
-import { ComponentProps, ElementRef, forwardRef } from 'react';
 import { CSS, keyframes, styled } from 'stitches.config';
+import { ComponentProps, ElementRef, forwardRef } from 'react';
+import {
+  Portal,
+  Content as PrimitiveContent,
+} from '@radix-ui/react-dropdown-menu';
 
 type DropdownMenuContentPrimitiveProps = ComponentProps<
   typeof PrimitiveContent
