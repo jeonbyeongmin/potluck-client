@@ -1,8 +1,12 @@
-export default function Logo() {
+interface LogoProps {
+  scale?: number;
+}
+
+export default function Logo({ scale = 1 }: LogoProps) {
   return (
     <svg
-      width="80"
-      height="40"
+      width={80 * scale}
+      height={40 * scale}
       viewBox="0 0 172 78"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

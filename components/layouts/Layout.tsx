@@ -17,7 +17,7 @@ function Layout({ children, title = 'Potluck' }: LayoutProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Header />
-      <Box>{children}</Box>
+      <Box css={{ height: '$screenH' }}>{children}</Box>
     </>
   );
 }
