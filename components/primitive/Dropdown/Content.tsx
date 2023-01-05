@@ -62,7 +62,7 @@ const CustomDropdownMenuContent = styled(PrimitiveContent, {
   br: '$md',
   padding: '$3',
   boxShadow: '$1',
-  animationDuration: '500ms',
+  animationDuration: '600ms',
   animationTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)',
   willChange: 'transform, opacity',
 

@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 import Head from 'next/head';
 import Header from 'components/layouts/Header';
-import { Box, Flex } from 'components/primitive';
+import { Box } from 'components/primitive';
 
 interface LayoutProps {
   title?: string;
