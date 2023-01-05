@@ -1,28 +1,47 @@
 import { styled } from 'stitches.config';
+import useToggle from 'hooks/useToggle';
 import Logo from 'components/assets/Logo';
-import { Avatar } from 'components/Avatar';
-import { Link } from 'components/primitive';
+import { Avatar, Link, Text } from 'components/primitive';
+import * as Dropdown from 'components/primitive/Dropdown';
+import { LogoutIcon, UserIcon } from 'components/icons';
 
 function Header() {
+  const [open, handleOpenChange] = useToggle(false);
+
   return (
-    <HeaderWrapper>
+    <HeaderContainer>
       <Link href="/">
         <Logo />
       </Link>
-      <Avatar alt="byeongmin" fallback="JB" variant="blue" />
-    </HeaderWrapper>
+
+      <Dropdown.Root open={open} onOpenChange={handleOpenChange}>
+        <Dropdown.Trigger>
+          <Avatar alt="byeongmin" fallback="JB" variant="blue" />
+        </Dropdown.Trigger>
+        <Dropdown.Content align="end">
+          <Dropdown.Item leftElement={<UserIcon size={18} />}>
+            <Link href="/profile">
+              <Text content="프로필" />
+            </Link>
+          </Dropdown.Item>
+          <Dropdown.Item leftElement={<LogoutIcon size={18} />}>
+            <Link href="/logout">
+              <Text content="로그아웃" />
+            </Link>
+          </Dropdown.Item>
+        </Dropdown.Content>
+      </Dropdown.Root>
+    </HeaderContainer>
   );
 }
 
-const HeaderWrapper = styled('header', {
+const HeaderContainer = styled('header', {
   w: '$full',
   h: '6rem',
-  px: '$8',
-
+  px: '$10',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
-
   bgColor: 'white',
 });
 
