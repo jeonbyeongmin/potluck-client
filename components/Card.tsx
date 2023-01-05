@@ -1,10 +1,12 @@
 import * as AspectRatio from '@radix-ui/react-aspect-ratio';
-import { Avatar } from 'components/primitive/Avatar';
-import { CommentsIcon, DotsVerticalIcon } from 'components/icons';
-import { IconButton } from 'components/IconButton';
+
 import { Box, Flex, Text } from 'components/primitive';
-import useHover from 'hooks/useHover';
+import { CommentsIcon, DotsVerticalIcon } from 'components/icons';
+
+import { Avatar } from 'components/primitive/Avatar';
+import { IconButton } from 'components/primitive/IconButton';
 import { styled } from 'stitches.config';
+import useHover from 'hooks/useHover';
 
 interface CardPrpos {
   title: string;

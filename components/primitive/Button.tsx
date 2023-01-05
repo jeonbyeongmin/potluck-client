@@ -1,22 +1,28 @@
-import { styled } from 'stitches.config';
+import { CSS, styled } from 'stitches.config';
+import { ComponentProps, ElementRef, ReactNode, forwardRef } from 'react';
 
-export const Button = styled('button', {
-  // Reset
+type ButtonVariants = ComponentProps<typeof CustomButton>;
+type ButtonProps = ButtonVariants & {
+  css?: CSS;
+  text: string;
+  leftElement?: ReactNode;
+  rightElement?: ReactNode;
+};
+
+const CustomButton = styled('button', {
   all: 'unset',
   alignItems: 'center',
-  boxSizing: 'border-box',
   userSelect: 'none',
+  boxSizing: 'border-box',
   '&::before': { boxSizing: 'border-box' },
   '&::after': { boxSizing: 'border-box' },
 
-  // Custom reset?
   display: 'inline-flex',
   flexShrink: 0,
   justifyContent: 'center',
   lineHeight: '1',
   WebkitTapHighlightColor: 'rgba(0,0,0,0)',
 
-  // Custom
   height: '$5',
   px: '$2',
   fontSize: '$md',
@@ -30,52 +36,58 @@ export const Button = styled('button', {
     pointerEvents: 'none',
   },
 
+  transition: '$fast',
+
   variants: {
     size: {
       xs: {
-        borderRadius: '$xs',
-        height: '$5',
-        px: '$2',
-        fontSize: '$1',
-        lineHeight: '$sizes$5',
+        height: '$16',
+        px: '$6',
       },
       sm: {
-        borderRadius: '$sm',
-        height: '$6',
-        px: '$3',
-        fontSize: '$3',
-        lineHeight: '$sizes$6',
+        height: '$20',
+        px: '$8',
       },
       md: {
-        borderRadius: '$md',
-        height: '$7',
-        px: '$4',
-        fontSize: '$4',
-        lineHeight: '$sizes$7',
+        height: '$22',
+        px: '$10',
       },
       lg: {
-        borderRadius: '$lg',
-        height: '$7',
-        px: '$4',
-        fontSize: '$4',
-        lineHeight: '$sizes$7',
+        height: '$23',
+        px: '$12',
       },
       xl: {
-        borderRadius: '$xl',
-        height: '$7',
-        px: '$4',
-        fontSize: '$4',
-        lineHeight: '$sizes$7',
+        height: '$24',
+        px: '$13',
       },
       '2xl': {
-        borderRadius: '$2xl',
-        height: '$7',
-        px: '$4',
-        fontSize: '$4',
-        lineHeight: '$sizes$7',
+        height: '$25',
+        px: '$14',
       },
     },
-    variant: {
+
+    fontSize: {
+      xs: { fslh: '$xs' },
+      sm: { fslh: '$sm' },
+      md: { fslh: '$md' },
+      lg: { fslh: '$lg' },
+      xl: { fslh: '$xl' },
+      '2xl': { fslh: '$2xl' },
+    },
+
+    br: {
+      xs: { borderRadius: '$xs' },
+      sm: { borderRadius: '$sm' },
+      md: { borderRadius: '$md' },
+      lg: { borderRadius: '$lg' },
+      xl: { borderRadius: '$xl' },
+      '2xl': { borderRadius: '$2xl' },
+      '3xl': { borderRadius: '$3xl' },
+      round: { borderRadius: '$round' },
+      pill: { borderRadius: '$pill' },
+    },
+
+    color: {
       gray: {
         backgroundColor: '$loContrast',
         boxShadow: 'inset 0 0 0 1px $colors$slate7',
@@ -83,14 +95,11 @@ export const Button = styled('button', {
         '@hover': {
           '&:hover': {
             boxShadow: 'inset 0 0 0 1px $colors$slate8',
+            bgColor: '$slate2',
           },
         },
         '&:active': {
-          backgroundColor: '$slate2',
-          boxShadow: 'inset 0 0 0 1px $colors$slate8',
-        },
-        '&:focus': {
-          boxShadow: 'inset 0 0 0 1px $colors$slate8, 0 0 0 1px $colors$slate8',
+          backgroundColor: '$slate3',
         },
         '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]':
           {
@@ -243,7 +252,7 @@ export const Button = styled('button', {
   },
   compoundVariants: [
     {
-      variant: 'gray',
+      color: 'gray',
       ghost: 'true',
       css: {
         backgroundColor: 'transparent',
@@ -269,7 +278,7 @@ export const Button = styled('button', {
       },
     },
     {
-      variant: 'blue',
+      color: 'blue',
       ghost: 'true',
       css: {
         backgroundColor: 'transparent',
@@ -293,7 +302,7 @@ export const Button = styled('button', {
       },
     },
     {
-      variant: 'green',
+      color: 'green',
       ghost: 'true',
       css: {
         backgroundColor: 'transparent',
@@ -318,7 +327,7 @@ export const Button = styled('button', {
       },
     },
     {
-      variant: 'red',
+      color: 'red',
       ghost: 'true',
       css: {
         backgroundColor: 'transparent',
@@ -344,7 +353,21 @@ export const Button = styled('button', {
   ],
 
   defaultVariants: {
-    size: '1',
-    variant: 'gray',
+    size: 'md',
+    fontSize: 'md',
+    br: 'md',
+    color: 'gray',
   },
 });
+
+export const Button = forwardRef<ElementRef<typeof CustomButton>, ButtonProps>(
+  ({ text, leftElement, rightElement, ...props }, forwaredRef) => {
+    return (
+      <CustomButton ref={forwaredRef} {...props}>
+        {!!leftElement ? leftElement : null}
+        {text}
+        {!!rightElement ? rightElement : null}
+      </CustomButton>
+    );
+  }
+);
