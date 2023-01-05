@@ -1,5 +1,5 @@
-import { ComponentProps, ElementRef, forwardRef } from 'react';
 import { CSS, styled } from 'stitches.config';
+import { ComponentProps, ElementRef, forwardRef } from 'react';
 
 type TextVariants = ComponentProps<typeof CustomText>;
 type TextProps = TextVariants & {
@@ -15,34 +15,13 @@ const CustomText = styled('span', {
 
   variants: {
     size: {
-      xs: {
-        fontSize: '$xs',
-        lineHeight: '$xs',
-      },
-      sm: {
-        fontSize: '$sm',
-        lineHeight: '$sm',
-      },
-      md: {
-        fontSize: '$md',
-        lineHeight: '$md',
-      },
-      lg: {
-        fontSize: '$lg',
-        lineHeight: '$lg',
-      },
-      xl: {
-        fontSize: '$xl',
-        lineHeight: '$xl',
-      },
-      '2xl': {
-        fontSize: '$2xl',
-        lineHeight: '$2xl',
-      },
-      '3xl': {
-        fontSize: '$3xl',
-        lineHeight: '$3xl',
-      },
+      xs: { fslh: '$xs' },
+      sm: { fslh: '$sm' },
+      md: { fslh: '$md' },
+      lg: { fslh: '$lg' },
+      xl: { fslh: '$xl' },
+      '2xl': { fslh: '$2xl' },
+      '3xl': { fslh: '$3xl' },
     },
 
     weight: {
